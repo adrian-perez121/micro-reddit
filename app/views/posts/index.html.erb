@@ -3,6 +3,10 @@
 <% @posts.each do |post| %>
   <div>
     <h3><%= link_to post.user.user_name, user_path(post.user) %></h3>
-    <%= render post %>
+    <a href="<%= user_post_path(post.user_id, post ) %>" style="text-decoration: none" >
+      <div>
+        <%= render post %>
+      </div>
+    </a>
   </div>
 <% end %>
