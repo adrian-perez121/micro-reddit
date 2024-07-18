@@ -1,6 +1,6 @@
 
 <p>
-  <strong> Post by: <%= post.user.user_name %></strong>
+  <strong> Post by: <%= link_to post.user.user_name, post.user %></strong>
   <br>
   <span>Created On: <%= post.created_at.strftime("%dth %b %Y") %></span>
   <br>
