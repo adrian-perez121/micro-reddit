@@ -3,3 +3,11 @@
 <%= render @post %>
 
 <%= link_to 'back', @user  %>
+
+<div>
+  <%= link_to "Delete", user_post_path(@post.user_id, @post), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+
+  } %>
+</div>
