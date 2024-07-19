@@ -1,1 +1,7 @@
-<div><%= comment.body %></div>
+<div>
+  <div><%= link_to comment.commenter, comment.user %></div>
+
+  <p>
+    <%= comment.body %>
+  </p>
+</div>

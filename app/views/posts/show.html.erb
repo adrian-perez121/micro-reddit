@@ -16,10 +16,10 @@
   } %>
 </div>
 
-<div>
-  <%= render 'comments/form' %>
-</div>
+<h3>Comments</h3>
+<%= render @post.comments %>
 
 <div>
-  <%= render @post.comments %>
+  <h3>Add your own comment!</h3>
+  <%= render 'comments/form' %>
 </div>
