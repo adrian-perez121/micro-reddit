@@ -4,9 +4,19 @@ class PostsController < ApplicationController
     @post = @user.posts.build
   end
 
-  def edit 
+  def edit
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to posts_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def index
