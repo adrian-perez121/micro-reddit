@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   resources :users do
     resources :posts, only: [:new, :create, :show, :destroy, :edit, :update] do
-      resources :posts, only: [:create]
+      resources :comments
     end
   end
 
