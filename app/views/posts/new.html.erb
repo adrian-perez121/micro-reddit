@@ -1,21 +1,4 @@
 <h1>New post for <%= @user.user_name %></h1>
 
-<%= form_with model: [@user, @post] do |form| %>
-  <div>
-    <%= form.label :title %>
-    <% @post.errors.full_messages_for(:title).each do |error| %>
-      <div><%= error %></div>
-    <% end %>
-    <%= form.text_field :title%>
-  </div>
-  <div>
-    <%= form.label :body %>
-    <% @post.errors.full_messages_for(:body).each do |error| %>
-      <div><%= error %></div>
-    <% end %>
-    <%= form.text_area :body %>
-  </div>
-
-  <%= form.submit %>
-<% end %>
+<%= render "posts/form", user: @user, post: @post %>
 

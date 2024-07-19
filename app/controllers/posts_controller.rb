@@ -4,6 +4,11 @@ class PostsController < ApplicationController
     @post = @user.posts.build
   end
 
+  def edit 
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+  end
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
